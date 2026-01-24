@@ -1,0 +1,8 @@
+1. Total_jobs = COUNTROWS(ai_jobs)
+2. remote jobs = CALCULATE([Total_jobs], ai_jobs[remote_type] ="remote")
+3. Onsite jobs = CALCULATE([Total_jobs],ai_jobs[remote_type]="Onsite")
+4. % Remote jobs = DIVIDE([remote jobs],[Total_jobs],0)
+5. % Onsite jobs = DIVIDE([Onsite jobs],[Total_jobs],0)
+6. Totl oj&rj = CALCULATE([Total_jobs], ai_jobs[remote_type] = "Onsite" || ai_jobs[remote_type] = "Remote")
+7. Avrg salary = AVERAGEX(ai_jobs, (ai_jobs[salary_min_usd] + ai_jobs[salary_max_usd]) / 2 )
+8. total countries = COUNT(dim_country[country])
